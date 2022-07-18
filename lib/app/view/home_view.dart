@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            getRadialGauge(),
+            const GetRadialGauge(),
             IconButton(
                 onPressed: () {
                   h.download();

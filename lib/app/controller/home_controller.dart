@@ -7,11 +7,13 @@ import 'package:internet_speed_test/internet_speed_test.dart';
 class HomeController extends GetxController {
   final internetSpeedTest = InternetSpeedTest();
 
-  double transferRateConsume = 0.0;
+  double transferRateConsume = 50;
 
   download() async {
     internetSpeedTest.startDownloadTesting(
       onDone: (double transferRate, SpeedUnit unit) {
+        transferRateConsume = transferRate;
+        update();
         log('the transfer rate $transferRate');
         // TODO: Change UI
       },
