@@ -22,16 +22,22 @@ class _HomeViewState extends State<HomeView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const GetRadialGauge(),
-            IconButton(
-                onPressed: () {
-                  h.download();
-                },
-                icon: Icon(Icons.download)),
-            IconButton(
-                onPressed: () {
-                  h.upload();
-                },
-                icon: Icon(Icons.upload)),
+            TextButton(
+              onPressed: () {
+                h.download();
+              },
+              child: Text("Start"),
+            ),
+            // IconButton(
+            //     onPressed: () {
+            //       h.download();
+            //     },
+            //     icon: Icon(Icons.download)),
+            // IconButton(
+            //     onPressed: () {
+            //       h.upload();
+            //     },
+            //     icon: Icon(Icons.upload)),
           ],
         ),
       ),

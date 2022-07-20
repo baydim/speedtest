@@ -7,12 +7,15 @@ import 'package:internet_speed_test/internet_speed_test.dart';
 class HomeController extends GetxController {
   InternetSpeedTest internetSpeedTest = InternetSpeedTest();
   String url = "https://www.citrahost.com/";
+  final name = "".obs;
 
   final transferRateConsume = 0.0.obs;
 
   download() async {
+    name("Test Download");
     internetSpeedTest.startDownloadTesting(
       onDone: (double transferRate, SpeedUnit unit) {
+        upload();
         log('the speedUnit ${unit.name}');
         transferRateConsume(transferRate);
         log('the transfer rate $transferRate');
@@ -30,6 +33,7 @@ class HomeController extends GetxController {
   }
 
   upload() async {
+    name("Test Upload");
     internetSpeedTest.startUploadTesting(
       onDone: (double transferRate, SpeedUnit unit) {
         log('the speedUnit ${unit.name}');

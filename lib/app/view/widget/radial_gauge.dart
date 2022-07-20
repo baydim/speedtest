@@ -24,10 +24,13 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
             children: [
               SfRadialGauge(
                 enableLoadingAnimation: true,
-                title: const GaugeTitle(
-                    text: 'INTERNET SPEED',
-                    textStyle:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+                title: GaugeTitle(
+                  text: 'INTERNET SPEED \n ${_.name.value}',
+                  textStyle: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 axes: <RadialAxis>[
                   RadialAxis(
                     minimum: 0,
@@ -62,7 +65,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                     annotations: <GaugeAnnotation>[
                       GaugeAnnotation(
                         widget: Container(
-                          color: Colors.green,
+                          color: Colors.transparent,
                           child: Text(
                             _.transferRateConsume.toString(),
                             style: TextStyle(
@@ -76,7 +79,6 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                   )
                 ],
               ),
-              Text(_.transferRateConsume.value.toString()),
             ],
           ),
         );
