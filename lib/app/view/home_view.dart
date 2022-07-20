@@ -22,6 +22,7 @@ class _HomeViewState extends State<HomeView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const GetRadialGauge(),
+
             TextButton(
               onPressed: () {
                 h.download();
