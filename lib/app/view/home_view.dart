@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:speedtest/app/controller/home_controller.dart';
 
 import 'widget/radial_gauge.dart';
@@ -13,7 +12,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  HomeController h = HomeController();
+  HomeController h = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
